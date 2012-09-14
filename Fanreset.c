@@ -1,13 +1,40 @@
 /*
- *  Fanreset.c
- *  Chameleon Module
+ * Copyright (c) 2012 RehabMan. All rights reserved.
  *
- *  Created by RehabMan on 2012-08-11.
- *  Copyright 2012. All rights reserved.
+ *  Released under "The GNU General Public License (GPL-2.0)"
+ *
+ *  This program is free software; you can redistribute it and/or modify it
+ *  under the terms of the GNU General Public License as published by the
+ *  Free Software Foundation; either version 2 of the License, or (at your
+ *  option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful, but
+ *  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ *  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+ *  for more details.
+ *
+ *  You should have received a copy of the GNU General Public License along
+ *  with this program; if not, write to the Free Software Foundation, Inc.,
+ *  59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  *
  */
- 
-// Note: EC port code shamelessly copied from tpfancontrol (open source)
+
+/*
+ * Please Note:
+ * 
+ * The specific code to read and write to the EC was copied and modified from
+ * original code written to control the fan on Thinkpads.
+ * 
+ * I modified it to compile/run using the Mac's Xcode Tools and run under
+ * the Chimera boot loader as a 'module'
+ *
+ * I could not find a specific open-source license provided by that code, so
+ * my version here is released under GPLv2.
+ *
+ * The original source is here: http://sourceforge.net/projects/tp4xfancontrol/
+ *
+ */
+
 
 #include "libsaio.h"
 #include "modules.h"
