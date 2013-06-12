@@ -200,6 +200,39 @@ void Fanreset_start()
     // next set fan to automatic
     WriteByteToEC(EC_FAN_CONTROL, 0xFF); // 0xFF is "automatic mode"
 
+/* Note: BIOS whitelist hack below is based on this bit of info in ProBook DSDT:
+
+ OperationRegion (RCRB, SystemMemory, 0xFED1C000, 0x4000)
+ Field (RCRB, DWordAcc, Lock, Preserve)
+ {
+    Offset (0x1A8),
+    APMC,   2,
+    Offset (0x1000),
+    Offset (0x3000),
+    Offset (0x3404),
+    HPAS,   2,
+        ,   5,
+    HPAE,   1,
+    Offset (0x3418),
+    ,   1,
+    ,   1,
+    SATD,   1,
+    SMBD,   1,
+    HDAD,   1,
+    Offset (0x341A),
+    RP1D,   1,
+    RP2D,   1,
+    RP3D,   1,
+    RP4D,   1,    //!!!!! target bit (set to 1 to disable PCIe card in that slot)
+    RP5D,   1,
+    RP6D,   1,
+    RP7D,   1,
+    RP8D,   1
+ }
+
+ The code below is writing Zero to RP4D.  Bit 3 at address 0xFED1C000+0x341A.
+*/
+
 /*
     // quick little hack for BigDonkey
     // clear bit 3 at 0xFED1F41A
