@@ -17,9 +17,11 @@ This code should not be used with laptops other than ProBook/EliteBook/Zbook, un
 
 Distributions:
 
-RehabMan-Fanreset-2012-0913.dylib.zip: original Fanreset.dylib for Chameleon
-RehabMan-Fanreset-2012-0922.dylib.zip: same but with WiFi whitelist hack
-HPFanReset-2013-1205.efi.zip: HPFanReset.efi for Clover UEFI
+- RehabMan-Fanreset-2012-0913.dylib.zip: original Fanreset.dylib for Chameleon
+
+- RehabMan-Fanreset-2012-0922.dylib.zip: same but with WiFi whitelist hack
+
+- HPFanReset-2013-1205.efi.zip: HPFanReset.efi for Clover UEFI
 
 
 ### Downloads
