@@ -1,0 +1,54 @@
+##
+#
+# Written by RehabMan 2013-12-05
+# based on Fanreset.dylib for Chameleon (also written by RehabMan)
+#
+# For HP ProBook series laptops
+# Reset Fan control to HP BIOS defaults
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = HPFanReset
+  FILE_GUID                      = 5624b853-7df6-4b10-a7ed-770f86b253e3
+  MODULE_TYPE                    = UEFI_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = HPFanResetEntry
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  Clover/CloverPkg.dec
+
+[LibraryClasses]
+  UefiLib
+  BaseLib
+  UefiDriverEntryPoint
+  TimerLib
+  PrintLib
+  MemLogLib
+#  DebugLib
+
+[Sources]
+  HPFanReset.c
+  HPFanReset.h
+  io_inline.h
+
+[Guids]
+#  gEfiFileInfoGuid								## CONSUMES
+#  gEfiFileSystemInfoGuid						## CONSUMES
+#  gEfiFileSystemVolumeLabelInfoIdGuid			## CONSUMES
+
+[Protocols]
+#  gEfiLoadedImageProtocolGuid
+#  gEfiDevicePathProtocolGuid
+#  gEfiSimpleFileSystemProtocolGuid
+#  gEfiBlockIoProtocolGuid
+#  gEfiDiskIoProtocolGuid
+#  gEfiGraphicsOutputProtocolGuid
+
+[Depex]
+
+[BuildOptions]
+
